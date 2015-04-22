@@ -18,7 +18,7 @@ public class WeatherDB {
     /**
      * 数据库名
      */
-    public static final String DB_NAME = "look_weather";
+    public static final String DB_NAME = "look_weather_6";
     /**
      * 数据库版本
      */
@@ -108,6 +108,7 @@ public class WeatherDB {
             ContentValues values = new ContentValues();
             values.put("county_name", county.getCountyName());
             values.put("county_code", county.getCountyCode());
+            values.put("weather_code", county.getWeatherCode());
             values.put("city_id", county.getCityId());
             db.insert("County", null, values);
         }
@@ -125,6 +126,7 @@ public class WeatherDB {
                 county.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 county.setCountyName(cursor.getString(cursor.getColumnIndex("county_name")));
                 county.setCountyCode(cursor.getString(cursor.getColumnIndex("county_code")));
+                county.setWeatherCode(cursor.getString(cursor.getColumnIndex("weather_code")));
                 county.setCityId(cityId);
                 list.add(county);
             } while (cursor.moveToNext());

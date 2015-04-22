@@ -7,7 +7,16 @@ public class County {
     private int id;
     private String countyName;
     private String countyCode;
+    private String weatherCode;
     private int cityId;
+
+    public String getWeatherCode() {
+        return weatherCode;
+    }
+
+    public void setWeatherCode(String weatherCode) {
+        this.weatherCode = weatherCode;
+    }
 
     public int getId() {
         return id;
